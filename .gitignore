@@ -4,3 +4,4 @@ __pycache__/
 *.txt
 .py[cod]
 *.o
+.ipynb_checkpoints
