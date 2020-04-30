@@ -1,0 +1,6 @@
+.ipynb
+.DS_Store
+__pycache__/
+*.txt
+.py[cod]
+*.o
