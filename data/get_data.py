@@ -1,7 +1,9 @@
 """
 Driver class to run the MCMC and get the training results
+
+Code is parallelized with joblib. It will use all available threads on your PC or all threads requested in your cluster job.
 """
-from tqdm import tqdm
+#from tqdm import tqdm
 import numpy as np
 import random
 from joblib import Parallel, delayed
@@ -26,7 +28,7 @@ if __name__ == "__main__":
     random.seed()
     num_samples = 50
     tc = 2/np.log(1+np.sqrt(2))
-    l = 15
+    l = 16
     dataset = np.zeros((num_samples,l*l),dtype=np.int8)
     results = np.zeros((num_samples,2),dtype=np.int8)
     temp = np.array([random.uniform(0.1,4.0) for _ in range(num_samples)],dtype=np.float64)
