@@ -45,7 +45,7 @@ if __name__ == "__main__":
 
     for i in range(len(output)):
         dataset[i,:] = output[i][0]
-        results[i,:] = one_hot_encoding(int(temp[i] < tc))
+        results[i,:] = one_hot_encoding(int(temp[i] < tc)) #first index of OHE is 1 for paramagnet, second index is 1 for ferromagnet
         magnetization[i] = output[i][1]
 
     np.savez_compressed('data',a=dataset, b=results, c=temp, d = magnetization)
